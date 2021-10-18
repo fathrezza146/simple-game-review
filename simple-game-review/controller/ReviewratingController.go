@@ -32,6 +32,7 @@ func GetRate(c *gin.Context) {
 // CreateRate godoc
 // @Tags ReviewRating
 // @Produce json
+// @Param Body body RatingInput true
 // @Success 200 {object} []models.ReviewRating
 // @Router /rating/ [post]
 func CreateRate(c *gin.Context) {
@@ -53,6 +54,7 @@ func CreateRate(c *gin.Context) {
 // GetRateID godoc
 // @Tags ReviewRating
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.ReviewRating
 // @Router /rating/{id} [get]
 func GetRateID(c *gin.Context) { // Get model if exist
@@ -70,6 +72,8 @@ func GetRateID(c *gin.Context) { // Get model if exist
 // UpdateRate godoc
 // @Tags ReviewRating
 // @Produce json
+// @Param id path string true
+// @Param id path RatingInput true
 // @Success 200 {object} []models.ReviewRating
 // @Router /rating/{id} [patch]
 func UpdateRate(c *gin.Context) {
@@ -102,6 +106,7 @@ func UpdateRate(c *gin.Context) {
 // DeleteRate godoc
 // @Tags ReviewRating
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.ReviewRating
 // @Router /rating/{id} [delete]
 func DeleteRate(c *gin.Context) {

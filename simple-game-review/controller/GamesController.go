@@ -35,6 +35,7 @@ func GetGames(c *gin.Context) {
 // CreateGame godoc
 // @Tags Games
 // @Produce json
+// @Param Body body GameInput true
 // @Success 200 {object} []models.Games
 // @Router /games/ [post]
 func CreateGame(c *gin.Context) {
@@ -56,6 +57,7 @@ func CreateGame(c *gin.Context) {
 // GetGameID godoc
 // @Tags Games
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.Games
 // @Router /games/{id} [get]
 func GetGameID(c *gin.Context) { // Get model if exist
@@ -73,6 +75,7 @@ func GetGameID(c *gin.Context) { // Get model if exist
 // GetReviewByGameId godoc
 // @Tags Games
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.Games
 // @Router /games/{id}/reviews [get]
 func GetReviewByGameId(c *gin.Context) { // Get model if exist
@@ -91,6 +94,8 @@ func GetReviewByGameId(c *gin.Context) { // Get model if exist
 // UpdateGame godoc
 // @Tags Games
 // @Produce json
+// @Param id path string true
+// @Param id path GameInput true
 // @Success 200 {object} []models.Games
 // @Router /games/{id} [patch]
 func UpdateGame(c *gin.Context) {
@@ -126,6 +131,7 @@ func UpdateGame(c *gin.Context) {
 // DeleteGame godoc
 // @Tags Games
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.Games
 // @Router /games/{id} [delete]
 func DeleteGame(c *gin.Context) {

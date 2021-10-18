@@ -34,10 +34,11 @@ func ConnectDataBase() *gorm.DB {
 	} else {
 		// development
 		username := "root"
+		password := "password"
 		host := "tcp(127.0.0.1:3306)"
-		database := "database_movie"
+		database := "reviewgame"
 
-		dsn := fmt.Sprintf("%v:@%v/%v?charset=utf8mb4&parseTime=True&loc=Local", username, host, database)
+		dsn := fmt.Sprintf("%v:%v@%v/%v?charset=utf8mb4&parseTime=True&loc=Local", username, password, host, database)
 		db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 		if err != nil {

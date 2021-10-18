@@ -31,6 +31,7 @@ func GetPub(c *gin.Context) {
 // CreatePubs godoc
 // @Tags Publisher
 // @Produce json
+// @Param Body body PubInput true
 // @Success 200 {object} []models.Publishers
 // @Router /publisher/ [post]
 func CreatePubs(c *gin.Context) {
@@ -52,6 +53,7 @@ func CreatePubs(c *gin.Context) {
 // GetPubID godoc
 // @Tags Publisher
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.Publishers
 // @Router /publisher/{id} [get]
 func GetPubID(c *gin.Context) { // Get model if exist
@@ -69,6 +71,7 @@ func GetPubID(c *gin.Context) { // Get model if exist
 // GetGamesByPubId godoc
 // @Tags Publisher
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.Publishers
 // @Router /publisher/{id}/games [get]
 func GetGamesByPubId(c *gin.Context) { // Get model if exist
@@ -87,6 +90,8 @@ func GetGamesByPubId(c *gin.Context) { // Get model if exist
 // UpdatePub godoc
 // @Tags Publisher
 // @Produce json
+// @Param id path string true
+// @Param id path PubInput true
 // @Success 200 {object} []models.Publishers
 // @Router /publisher/{id} [patch]
 func UpdatePub(c *gin.Context) {
@@ -118,6 +123,7 @@ func UpdatePub(c *gin.Context) {
 // DeletePub godoc
 // @Tags Publisher
 // @Produce json
+// @Param id path string true
 // @Success 200 {object} []models.Publishers
 // @Router /publisher/{id} [delete]
 func DeletePub(c *gin.Context) {
