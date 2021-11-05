@@ -30,9 +30,9 @@ func GetDevs(c *gin.Context) {
 
 // CreateDevs godoc
 // @Tags Developer
+// @Param Body body DevInput true "body to create data game_developers"
 // @Produce json
-// @Param Body body DevInput true
-// @Success 200 {object} []models.Developers
+// @Success 200 {object} models.Developers
 // @Router /developer/ [post]
 func CreateDevs(c *gin.Context) {
 	// Validate input
@@ -53,7 +53,7 @@ func CreateDevs(c *gin.Context) {
 // GetDevsID godoc
 // @Tags Developer
 // @Produce json
-// @Param id path string true
+// @Param id path string true "Get Devs by ID"
 // @Success 200 {object} []models.Developers
 // @Router /developer/{id} [get]
 func GetDevsID(c *gin.Context) { // Get model if exist
@@ -72,7 +72,7 @@ func GetDevsID(c *gin.Context) { // Get model if exist
 // @Tags Developer
 // @Produce json
 // @Param id path string true
-// @Success 200 {object} []models.Developers
+// @Success 200 {object} []models.Games
 // @Router /developer/{id}/games [get]
 func GetGamesByDevId(c *gin.Context) { // Get model if exist
 	var games []models.Games
@@ -90,9 +90,9 @@ func GetGamesByDevId(c *gin.Context) { // Get model if exist
 // UpdateDev godoc
 // @Tags Developer
 // @Produce json
-// @Param id path string true
-// @Param id path DevInput true
-// @Success 200 {object} []models.Developers
+// @Param id path string true "dev id"
+// @Param body body DevInput true "update the developer"
+// @Success 200 {object} models.Developers
 // @Router /developer/{id} [patch]
 func UpdateDev(c *gin.Context) {
 
@@ -124,7 +124,7 @@ func UpdateDev(c *gin.Context) {
 // @Tags Developer
 // @Produce json
 // @Param id path string true
-// @Success 200 {object} []models.Developers
+// @Success 200 {object} models.Developers
 // @Router /developer/{id} [delete]
 func DeleteDev(c *gin.Context) {
 	// Get model if exist

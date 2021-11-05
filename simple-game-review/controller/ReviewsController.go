@@ -32,8 +32,8 @@ func GetReview(c *gin.Context) {
 // CreateReview godoc
 // @Tags Review
 // @Produce json
-// @Param Body body ReviewInput true
-// @Success 200 {object} []models.Reviews
+// @Param Body body ReviewInput true "Create review"
+// @Success 200 {object} models.Reviews
 // @Router /review/ [post]
 func CreateReview(c *gin.Context) {
 	// Validate input
@@ -54,7 +54,7 @@ func CreateReview(c *gin.Context) {
 // GetReviewID godoc
 // @Tags Review
 // @Produce json
-// @Param id path string true
+// @Param id path string true "id review"
 // @Success 200 {object} []models.Reviews
 // @Router /review/{id} [get]
 func GetReviewID(c *gin.Context) { // Get model if exist
@@ -72,8 +72,8 @@ func GetReviewID(c *gin.Context) { // Get model if exist
 // GetRatingByReviewId godoc
 // @Tags Review
 // @Produce json
-// @Param id path string true
-// @Success 200 {object} []models.Reviews
+// @Param id path string true "id rating"
+// @Success 200 {object} []models.ReviewRating
 // @Router /review/{id}/ratings [get]
 func GetRatingByReviewId(c *gin.Context) { // Get model if exist
 	var rate []models.ReviewRating
@@ -91,9 +91,9 @@ func GetRatingByReviewId(c *gin.Context) { // Get model if exist
 // UpdateReview godoc
 // @Tags Review
 // @Produce json
-// @Param id path string true
-// @Param id path ReviewInput true
-// @Success 200 {object} []models.Reviews
+// @Param id path string true "id review"
+// @Param Body body ReviewInput true "update the review"
+// @Success 200 {object} models.Reviews
 // @Router /review/{id} [patch]
 func UpdateReview(c *gin.Context) {
 
@@ -125,8 +125,8 @@ func UpdateReview(c *gin.Context) {
 // DeleteReview godoc
 // @Tags Review
 // @Produce json
-// @Param id path string true
-// @Success 200 {object} []models.Reviews
+// @Param id path string true "id review"
+// @Success 200 {object} models.Reviews
 // @Router /review/{id} [delete]
 func DeleteReview(c *gin.Context) {
 	// Get model if exist

@@ -31,8 +31,8 @@ func GetCategory(c *gin.Context) {
 // GetCategory godoc
 // @Tags Category
 // @Produce json
-// @Param Body body CategoryInput true "AA"
-// @Success 200 {object} []models.Category
+// @Param Body body CategoryInput true "Create a Game Category"
+// @Success 200 {object} models.Category
 // @Router /category/ [post]
 func CreateCategory(c *gin.Context) {
 	// Validate input
@@ -53,7 +53,7 @@ func CreateCategory(c *gin.Context) {
 // GetCategoryID godoc
 // @Tags Category
 // @Produce json
-// @Param id path string true
+// @Param id path string true "id category"
 // @Success 200 {object} []models.Category
 // @Router /category/{id} [get]
 func GetCategoryID(c *gin.Context) { // Get model if exist
@@ -71,8 +71,8 @@ func GetCategoryID(c *gin.Context) { // Get model if exist
 // GetGamesByCategoryId godoc
 // @Tags Category
 // @Produce json
-// @Param id path string true
-// @Success 200 {object} []models.Category
+// @Param id path string true "id category"
+// @Success 200 {object} []models.Games
 // @Router /category/{id}/games [get]
 func GetGamesByCategoryId(c *gin.Context) { // Get model if exist
 	var games []models.Games
@@ -90,9 +90,9 @@ func GetGamesByCategoryId(c *gin.Context) { // Get model if exist
 // UpdateCategory godoc
 // @Tags Category
 // @Produce json
-// @Param id path string true
-// @Param id path CategoryInput true "AAA"
-// @Success 200 {object} []models.Category
+// @Param id path string true "id category"
+// @Param Body body CategoryInput true "update the category"
+// @Success 200 {object} models.Category
 // @Router /category/{id} [patch]
 func UpdateCategory(c *gin.Context) {
 
@@ -123,8 +123,8 @@ func UpdateCategory(c *gin.Context) {
 // DeleteCategory godoc
 // @Tags Category
 // @Produce json
-// @Param id path string true "Aaa"
-// @Success 200 {object} []models.Cate gory
+// @Param id path string true "Delete a category"
+// @Success 200 {object} models.Cate gory
 // @Router /category/{id} [delete]
 func DeleteCategory(c *gin.Context) {
 	// Get model if exist
