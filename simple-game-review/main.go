@@ -28,8 +28,8 @@ func main() {
 	}
 
 	// programmatically set swagger info
-	docs.SwaggerInfo.Title = "Swagger Example API"
-	docs.SwaggerInfo.Description = "This is a sample server Movie."
+	docs.SwaggerInfo.Title = "Swagger Example API for simple game review"
+	docs.SwaggerInfo.Description = "This is a sample of simple game review servew."
 	docs.SwaggerInfo.Version = "1.0"
 	docs.SwaggerInfo.Host = utils.Getenv("SWAGGER_HOST", "localhost:8080")
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
